@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Nueva Area
+{% endblock title %}
+    
+
+{% block content %}
+{% include 'includes/header.html' %}
+
+<div class="grid-container">
+    <div class="grid-x">
+        <h1 class="cell"> Registrar nuevo departamento</h1>
+
+        <form class="cell callout grid-x grid-margin-x" method="POST">{% csrf_token %}
+            <div class="cell" >
+                <h3>Datos Empleado</h3>
+            </div>
+            <div class="large-6 cell">
+                <label>Nombres
+                    {{form.nombre}}
+                </label>
+            </div>
+            <div class="large-6 cell">
+                <label>Apellidos
+                    {{form.apellidos}}
+                </label>
+            </div>
+            <div class="cell" >
+                <h3>Datos Departamento</h3>
+            </div>
+            <div class="large-6 cell">
+                <label>Trabajo
+                    {{form.departamento}}
+                </label>
+            </div>
+            <div class="large-6 cell">
+                <label>Area
+                    {{form.shorname}}
+                </label>
+            </div>
+            
+            <div class="cell">
+                <button type="submit" class="submit success button">Guardar</button>
+            </div>
+        
+        </form>
+        
+    </div>
+
+</div>
+
+{% endblock content %}
+    
+
+
+
+

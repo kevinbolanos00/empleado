@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Login
+{% endblock title %}
+
+{% block content %}
+<div class="grid-container">
+    <div class="grid-x">
+        <div class="cell small-12 medium-6 medium-offset-3">
+            <h1 class="text-center">Inicio de sesión</h1>
+
+            <form class="callout" method="POST">
+                {% csrf_token %}
+                <div class="grid-x grid-margin-x">
+                    <div class="cell">
+                        {{ form.username.label_tag }}
+                        {{ form.username }}
+                    </div>
+                    <div class="cell">
+                        {{ form.password.label_tag }}
+                        {{ form.password }}
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="button success">Ingresar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %} 
+  
+  
